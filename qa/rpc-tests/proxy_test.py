@@ -100,7 +100,7 @@ class ProxyTest(BitcoinTestFramework):
         rv.append(cmd)
 
         # Test: outgoing onion connection through node
-        node.addnode("pivxvj7kcklujarx.onion:51572", "onetry")
+        # node.addnode("pivxvj7kcklujarx.onion:51572", "onetry")
         cmd = proxies[2].queue.get()
         assert(isinstance(cmd, Socks5Command))
         assert_equal(cmd.atyp, AddressType.DOMAINNAME)

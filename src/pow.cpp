@@ -124,6 +124,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
         return error("CheckProofOfWork() : nBits below minimum work");
 
     // Check proof of work matches claimed amount
+    LogPrintf("Hash: total size %u\n", hash.ToString());
+    LogPrintf("Target: total size %s\n", bnTarget.ToString());
     if (hash > bnTarget)
         return error("CheckProofOfWork() : hash doesn't match nBits");
 
